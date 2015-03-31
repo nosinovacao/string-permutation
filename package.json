@@ -1,0 +1,8 @@
+﻿{
+  "name": "permutation",
+  "description": "Permutation module. Provides functionality over string permutation",
+  "version": "0.0.1",
+  "author": "Mário Marques <mariomarques@boldint.com>",
+  "keywords": "permutation",
+  "main": "./permutation.js" 
+}
