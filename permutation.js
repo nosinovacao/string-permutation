@@ -1,11 +1,11 @@
 ﻿"use strict";
  
 
-exports.permuteName = function (completeName) {
+exports.permuteString = function (str) {
     
-    completeName = completeName.replace(/\s{2,}/g, ' ').trim();
+    str = str.replace(/\s{2,}/g, ' ').trim();
     
-    if (!completeName || completeName.length <= 0)
+    if (!str || str.length <= 0)
         return;
 
     var words = completeName.split(' ');
@@ -13,7 +13,7 @@ exports.permuteName = function (completeName) {
 
     if (words.length > 3) {
         for (var i = 2; i <= words.length - 1; i++) {
-            result.push(completeName.replace(' ' + words[i], ''));
+            result.push(str.replace(' ' + words[i], ''));
         }
     }
     return result

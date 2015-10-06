@@ -3,10 +3,10 @@
     /**
     * Permutes words present on a string
     *
-    * @param completeName string containing name to be permuted
+    * @param str string to be permuted
     * @return {Array<string>} Array that contains permuted names
     */
-    function permuteName(completeName: string): Array<string>;
+    function permuteString(str: string): Array<string>;
 
     /**
     * Permutes words present on an Array
