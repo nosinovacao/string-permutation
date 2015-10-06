@@ -3,10 +3,14 @@
 
 exports.permuteString = function (str) {
     
+    if (str == null || typeof str === 'undefined' || typeof str !== 'string') {
+        throw new Error('Expect string parameter');
+    }
+    
     str = str.replace(/\s{2,}/g, ' ').trim();
     
     if (!str || str.length <= 0)
-        return;
+        return [];
 
     var words = str.split(' ');
     var result = permuteWordsArray(words);
@@ -21,8 +25,17 @@ exports.permuteString = function (str) {
 
 exports.permuteArray = function (sourceArray) {
     
+    if (sourceArray == null || typeof sourceArray === 'undefined' || !Array.isArray(sourceArray)) {
+        throw new Error('Expect array parameter');
+    }
+    
+
     var completeName = '';
     for (var n = 0; n < sourceArray.length; n++) {
+        
+        if (sourceArray[n] == null || typeof sourceArray[0] === 'undefined' || typeof sourceArray[0] !== 'string' ) {
+            throw new Error('Expect string as array elements');
+        }
         completeName += sourceArray[n] + ' ';
     }
     completeName = completeName.replace(/\s{2,}/g, ' ').trim();
@@ -44,7 +57,7 @@ function permuteWordsArray (words) {
     var result = [];
     
     if (words.length == 1) {
-        result.push(completeName);
+        result.push(words[0]);
         return result;
     }
     
