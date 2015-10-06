@@ -8,7 +8,7 @@ exports.permuteString = function (str) {
     if (!str || str.length <= 0)
         return;
 
-    var words = completeName.split(' ');
+    var words = str.split(' ');
     var result = permuteWordsArray(words);
 
     if (words.length > 3) {
