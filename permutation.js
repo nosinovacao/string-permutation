@@ -1,7 +1,7 @@
 ﻿"use strict";
  
 
-exports.PermuteName = function (completeName) {
+exports.permuteName = function (completeName) {
     
     completeName = completeName.replace(/\s{2,}/g, ' ').trim();
     
@@ -9,7 +9,7 @@ exports.PermuteName = function (completeName) {
         return;
 
     var words = completeName.split(' ');
-    var result = PermuteWordsArray(words);
+    var result = permuteWordsArray(words);
 
     if (words.length > 3) {
         for (var i = 2; i <= words.length - 1; i++) {
@@ -19,7 +19,7 @@ exports.PermuteName = function (completeName) {
     return result
 }
 
-exports.PermuteArray = function (sourceArray) {
+exports.permuteArray = function (sourceArray) {
     
     var completeName = '';
     for (var n = 0; n < sourceArray.length; n++) {
@@ -28,7 +28,7 @@ exports.PermuteArray = function (sourceArray) {
     completeName = completeName.replace(/\s{2,}/g, ' ').trim();
     
     var words = completeName.split(' ');
-    var result = PermuteWordsArray(words)
+    var result = permuteWordsArray(words)
 
     if (words.length > 3) {
         for (var i = 2; i <= words.length - 1; i++) {
@@ -39,7 +39,7 @@ exports.PermuteArray = function (sourceArray) {
 }
 
 
-function PermuteWordsArray (words) {
+function permuteWordsArray (words) {
 
     var result = [];
     
