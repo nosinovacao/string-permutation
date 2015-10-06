@@ -9,6 +9,38 @@ exports.PermuteName = function (completeName) {
         return;
 
     var words = completeName.split(' ');
+    var result = PermuteWordsArray(words);
+
+    if (words.length > 3) {
+        for (var i = 2; i <= words.length - 1; i++) {
+            result.push(completeName.replace(' ' + words[i], ''));
+        }
+    }
+    return result
+}
+
+exports.PermuteArray = function (sourceArray) {
+    
+    var completeName = '';
+    for (var n = 0; n < sourceArray.length; n++) {
+        completeName += sourceArray[n] + ' ';
+    }
+    completeName = completeName.replace(/\s{2,}/g, ' ').trim();
+    
+    var words = completeName.split(' ');
+    var result = PermuteWordsArray(words)
+
+    if (words.length > 3) {
+        for (var i = 2; i <= words.length - 1; i++) {
+            result.push(completeName.replace(' ' + words[i], ''));
+        }
+    }
+    return result
+}
+
+
+function PermuteWordsArray (words) {
+
     var result = [];
     
     if (words.length == 1) {
@@ -38,12 +70,5 @@ exports.PermuteName = function (completeName) {
             aux = aux + 1;
         }
     }
-    
-    if (words.length > 3) {
-        for (var i = 2; i <= words.length - 1; i++) {
-            result.push(completeName.replace(' ' + words[i], ''));
-        }
-    }
-
     return result;
 }
