@@ -18,7 +18,11 @@ exports.permuteArray = function (sourceArray) {
         if (sourceArray[n] == null || typeof sourceArray[0] === 'undefined' || typeof sourceArray[0] !== 'string') {
             throw new Error('Expect string as array elements');
         }
-        results.push(permuteString(sourceArray[n]));
+        
+        var r = permuteString(sourceArray[n]);
+        for (var i = 0; i < r.length; i++) {
+            results.push(r[i]);
+        }
     }
     return results;
 }

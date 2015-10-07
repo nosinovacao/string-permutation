@@ -12,7 +12,7 @@
     * Permutes words present on an Array
     *
     * @param sourceArray Array containing names to be permuted
-    * @return {Array<Array<string>>} Array that contains results of permuted names
+    * @return {Array<string>} Array that contains results of permuted names
     */
-    function permuteArray(sourceArray: Array<string>): Array<Array<string>>;
+    function permuteArray(sourceArray: Array<string>): Array<string>;
 }
