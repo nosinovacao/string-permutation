@@ -1,26 +1,8 @@
 ﻿"use strict";
  
 
-exports.permuteString = function (str) {
-    
-    if (str == null || typeof str === 'undefined' || typeof str !== 'string') {
-        throw new Error('Expect string parameter');
-    }
-    
-    str = str.replace(/\s{2,}/g, ' ').trim();
-    
-    if (!str || str.length <= 0)
-        return [];
-
-    var words = str.split(' ');
-    var result = permuteWordsArray(words);
-
-    if (words.length > 3) {
-        for (var i = 2; i <= words.length - 1; i++) {
-            result.push(str.replace(' ' + words[i], ''));
-        }
-    }
-    return result
+exports.permuteString = function (str) {   
+    return permuteString(str);
 }
 
 exports.permuteArray = function (sourceArray) {
@@ -29,28 +11,39 @@ exports.permuteArray = function (sourceArray) {
         throw new Error('Expect array parameter');
     }
     
-
     var completeName = '';
+    var results = []
     for (var n = 0; n < sourceArray.length; n++) {
         
-        if (sourceArray[n] == null || typeof sourceArray[0] === 'undefined' || typeof sourceArray[0] !== 'string' ) {
+        if (sourceArray[n] == null || typeof sourceArray[0] === 'undefined' || typeof sourceArray[0] !== 'string') {
             throw new Error('Expect string as array elements');
         }
-        completeName += sourceArray[n] + ' ';
+        results.push(permuteString(sourceArray[n]));
     }
-    completeName = completeName.replace(/\s{2,}/g, ' ').trim();
-    
-    var words = completeName.split(' ');
-    var result = permuteWordsArray(words)
+    return results;
+}
 
+
+function permuteString(str) {
+    if (str == null || typeof str === 'undefined' || typeof str !== 'string') {
+        throw new Error('Expect string parameter');
+    }
+    
+    str = str.replace(/\s{2,}/g, ' ').trim();
+    
+    if (!str || str.length <= 0)
+        return [];
+    
+    var words = str.split(' ');
+    var result = permuteWordsArray(words);
+    
     if (words.length > 3) {
         for (var i = 2; i <= words.length - 1; i++) {
-            result.push(completeName.replace(' ' + words[i], ''));
+            result.push(str.replace(' ' + words[i], ''));
         }
     }
     return result
 }
-
 
 function permuteWordsArray (words) {
 
