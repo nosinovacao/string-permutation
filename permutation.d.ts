@@ -1,4 +1,4 @@
-﻿declare module "permutation" {
+declare module "permutation" {
 
     /**
     * Permutes words present on a string

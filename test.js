@@ -1,4 +1,4 @@
-﻿var permut = require("permutation");
+var permut = require("permutation");
 var chai = require('chai')
 
 // ***************************************************************
